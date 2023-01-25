@@ -68,6 +68,17 @@ app.get("/index", (req, res) => {
   });
 });
 
+// Create Route
+
+app.post("/", (req, res) => {
+  Voter.create(req.body, (err, createdVoter) => {
+    try {
+      res.redirect("/index");
+    } catch (err) {
+      res.send(err);
+    }
+  });
+});
 // Listen on the port
 app.listen(PORT, () => {
   console.log(`listening on port:${PORT} http://localhost:${PORT}/`);
