@@ -32,7 +32,9 @@ mongoose.connection.once("open", () => {
   console.log("connected to mongo");
 });
 
-Voter.create(seedData);
+// Seed Data
+//Voter.create(seedData);
+
 /**
  * Middleware
  */
@@ -73,11 +75,7 @@ app.get("/index", (req, res) => {
 
 app.post("/", (req, res) => {
   Voter.create(req.body, (err, createdVoter) => {
-    try {
-      res.redirect("/index");
-    } catch (err) {
-      res.send(err);
-    }
+    res.redirect("/index");
   });
 });
 
@@ -87,7 +85,7 @@ app.get("/new", (req, res) => {
 });
 
 // Show Route
-app.get("/:id", (req, res) => {
+app.get("/voters/:id", (req, res) => {
   const { id } = req.params;
 
   Voter.findById(id, (error, foundVoter) => {

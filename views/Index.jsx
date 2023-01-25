@@ -18,6 +18,9 @@ class Index extends React.Component {
             );
           })}
         </ul>
+        <nav>
+          <a href="/new">Create New Voter</a>
+        </nav>
       </div>
     );
   }
