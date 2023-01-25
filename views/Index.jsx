@@ -12,8 +12,8 @@ class Index extends React.Component {
           {this.props.voters.map((voter, i) => {
             return (
               <li key={i}>
-                <a href={`/voters/${fruit.id}`}> {voter.name} </a> is a
-                registered {voter.affiliation}
+                <a href={`/voters/${voter.id}`}> {voter.name} </a> is a
+                registered {voter.affiliation}.
               </li>
             );
           })}
@@ -22,3 +22,5 @@ class Index extends React.Component {
     );
   }
 }
+
+module.exports = Index;

@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
 const Voter = require("./models/voters.js");
-
+const seedData = require("./seed.js");
 //include the method-override package place this where you instructor places it
 const methodOverride = require("method-override");
 
@@ -32,6 +32,7 @@ mongoose.connection.once("open", () => {
   console.log("connected to mongo");
 });
 
+Voter.create(seedData);
 /**
  * Middleware
  */
@@ -60,7 +61,11 @@ app.get("/", (req, res) => {
 });
 
 app.get("/index", (req, res) => {
-  res.send("index page");
+  Voter.find({}, (err, allVoters) => {
+    res.render("Index", {
+      voters: allVoters,
+    });
+  });
 });
 
 // Listen on the port
