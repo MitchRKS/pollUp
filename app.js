@@ -55,11 +55,12 @@ app.engine("jsx", require("jsx-view-engine").createEngine());
  * Controller middlewares go here ⬇️
  */
 
-// Index route
+// Landing Page
 app.get("/", (req, res) => {
-  res.redirect("/index");
+  res.send("content coming soon!");
 });
 
+// Index route
 app.get("/index", (req, res) => {
   Voter.find({}, (err, allVoters) => {
     res.render("Index", {
@@ -79,6 +80,23 @@ app.post("/", (req, res) => {
     }
   });
 });
+
+// New Route
+app.get("/new", (req, res) => {
+  res.render("New");
+});
+
+// Show Route
+app.get("/:id", (req, res) => {
+  const { id } = req.params;
+
+  Voter.findById(id, (error, foundVoter) => {
+    res.render("Show", {
+      voter: foundVoter,
+    });
+  });
+});
+
 // Listen on the port
 app.listen(PORT, () => {
   console.log(`listening on port:${PORT} http://localhost:${PORT}/`);
