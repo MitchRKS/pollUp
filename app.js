@@ -55,7 +55,7 @@ app.engine("jsx", require("jsx-view-engine").createEngine());
 
 // Index route
 app.get("/", (req, res) => {
-  res.render("Index");
+  res.send("connected");
 });
 
 // Listen on the port
