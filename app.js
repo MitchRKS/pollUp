@@ -6,6 +6,7 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
+const Voter = require("./models/voters.js");
 
 //include the method-override package place this where you instructor places it
 const methodOverride = require("method-override");
@@ -55,7 +56,11 @@ app.engine("jsx", require("jsx-view-engine").createEngine());
 
 // Index route
 app.get("/", (req, res) => {
-  res.send("connected");
+  res.redirect("/index");
+});
+
+app.get("/index", (req, res) => {
+  res.send("index page");
 });
 
 // Listen on the port
