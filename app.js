@@ -59,7 +59,7 @@ app.engine("jsx", require("jsx-view-engine").createEngine());
 
 // Landing Page
 app.get("/", (req, res) => {
-  res.send("content coming soon!");
+  res.redirect("/voters");
 });
 
 // Index route
@@ -100,10 +100,10 @@ app.get("/voters/:id", (req, res) => {
 });
 
 // Edit Route
-app.get("/:id/edit", (req, res) => {
+app.get("/voters/:id/edit", (req, res) => {
   Voter.findById(req.params.id, (err, foundVoter) => {
     if (!err) {
-      res.render("voters/Edit", {
+      res.render("Edit", {
         voter: foundVoter,
       });
     } else {
@@ -113,7 +113,7 @@ app.get("/:id/edit", (req, res) => {
 });
 
 //Update Route
-app.put("/:id", (req, res) => {
+app.put("/", (req, res) => {
   Voter.findByIdAndUpdate(req.params.id, req.body, (err, foundVoter) => {
     if (!err) {
       res.redirect(`/voters/${req.params.id}`);

@@ -14,6 +14,7 @@ class Show extends React.Component {
         Contacted: {voter.contacted}
         <nav>
           <a href="/voters">Home</a>
+          <a href="/voters/{voter._id}/edit" />
         </nav>
       </div>
     );

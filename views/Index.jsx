@@ -7,20 +7,22 @@ class Index extends React.Component {
     return (
       <div>
         <h1>pollUp Master Index</h1>
-        <nav>Nav Bar</nav>
+        <nav>
+          <a href="/new">Create New Voter</a>
+        </nav>
         <ul>
           {this.props.voters.map((voter, i) => {
             return (
               <li key={i}>
                 <a href={`/voters/${voter.id}`}> {voter.name} </a> is a
                 registered {voter.affiliation}.
+                <form action={`/voters/${voter._id}/edit`} method="GET">
+                  <input type="submit" value="Edit" />
+                </form>
               </li>
             );
           })}
         </ul>
-        <nav>
-          <a href="/new">Create New Voter</a>
-        </nav>
       </div>
     );
   }
