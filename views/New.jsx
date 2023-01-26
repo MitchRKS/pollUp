@@ -5,7 +5,7 @@ class New extends React.Component {
     return (
       <div>
         <h1>Create Prospective Supporter</h1>
-        <form action="/index" method="POST">
+        <form action="/" method="POST">
           Name: <input type="text" name="name" />
           <br />
           Affiliation: <input type="text" name="affiliation" />

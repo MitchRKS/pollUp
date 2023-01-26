@@ -63,7 +63,7 @@ app.get("/", (req, res) => {
 });
 
 // Index route
-app.get("/index", (req, res) => {
+app.get("/voters", (req, res) => {
   Voter.find({}, (err, allVoters) => {
     res.render("Index", {
       voters: allVoters,
@@ -75,7 +75,7 @@ app.get("/index", (req, res) => {
 
 app.post("/", (req, res) => {
   Voter.create(req.body, (err, createdVoter) => {
-    res.redirect("/index");
+    res.redirect("/voters");
   });
 });
 

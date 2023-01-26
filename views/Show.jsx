@@ -2,18 +2,18 @@ const React = require("react");
 
 class Show extends React.Component {
   render() {
-    const voter = this.props.fruit;
+    const voter = this.props.voter;
 
     return (
       <div>
         <h1>Profile View</h1>
-        {/* Name: {voter.name}
+        Name: {voter.name}
         Affiliation: {voter.affiliation}
         House District: {voter.house_district}
         Senate District: {voter.senate_district}
-        Contacted: {voter.contacted} */}
+        Contacted: {voter.contacted}
         <nav>
-          <a href="/index">Home</a>
+          <a href="/voters">Home</a>
         </nav>
       </div>
     );
