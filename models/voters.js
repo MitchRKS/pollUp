@@ -5,7 +5,6 @@ const voterSchema = new mongoose.Schema({
   affiliation: String,
   house_district: Number,
   senate_district: Number,
-  contacted: Boolean,
 });
 
 const Voter = mongoose.model("Voter", voterSchema);

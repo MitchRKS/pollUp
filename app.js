@@ -33,7 +33,7 @@ mongoose.connection.once("open", () => {
 });
 
 // Seed Data
-//Voter.create(seedData);
+Voter.create(seedData);
 
 /**
  * Middleware
@@ -75,7 +75,11 @@ app.get("/voters", (req, res) => {
 
 app.post("/", (req, res) => {
   Voter.create(req.body, (err, createdVoter) => {
-    res.redirect("/voters");
+    if (err) {
+      console.log(err);
+    } else {
+      res.redirect("/voters");
+    }
   });
 });
 
