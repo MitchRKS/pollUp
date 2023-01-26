@@ -33,7 +33,7 @@ mongoose.connection.once("open", () => {
 });
 
 // Seed Data
-Voter.create(seedData);
+//Voter.create(seedData);
 
 /**
  * Middleware
@@ -99,6 +99,29 @@ app.get("/voters/:id", (req, res) => {
   });
 });
 
+// Edit Route
+app.get("/:id/edit", (req, res) => {
+  Voter.findById(req.params.id, (err, foundVoter) => {
+    if (!err) {
+      res.render("voters/Edit", {
+        voter: foundVoter,
+      });
+    } else {
+      res.send({ msg: err.message });
+    }
+  });
+});
+
+//Update Route
+app.put("/:id", (req, res) => {
+  Voter.findByIdAndUpdate(req.params.id, req.body, (err, foundVoter) => {
+    if (!err) {
+      res.redirect(`/voters/${req.params.id}`);
+    } else {
+      res.send({ error: err });
+    }
+  });
+});
 // Listen on the port
 app.listen(PORT, () => {
   console.log(`listening on port:${PORT} http://localhost:${PORT}/`);
