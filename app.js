@@ -112,6 +112,17 @@ app.get("/voters/:id/edit", (req, res) => {
   });
 });
 
+// Delete Route
+app.delete("/voters/:id", (req, res) => {
+  Voter.findByIdAndRemove(req.params.id, (err, data) => {
+    if (!err) {
+      res.redirect("/voters");
+    } else {
+      res.send({ error: err });
+    }
+  });
+});
+
 //Update Route
 app.patch("/voters/:id", (req, res) => {
   Voter.findByIdAndUpdate(req.params.id, req.body, (err, foundVoter) => {

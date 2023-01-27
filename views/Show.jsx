@@ -19,6 +19,10 @@ class Show extends React.Component {
         <button>
           <a href={`/voters/${voter._id}/edit`}>Edit Voter</a>
         </button>
+        <br />
+        <form action={`/voters/${voter._id}?_method=DELETE`} method="POST">
+          <input type="submit" value="DELETE" />
+        </form>
       </div>
     );
   }
