@@ -11,7 +11,8 @@
     "scripts": "^0.1.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "tailwindcss": "^3.2.4"
   },
   "name": "pollup",
   "description": "## We help campaigns through numbers on that board.",

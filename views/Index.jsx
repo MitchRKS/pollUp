@@ -1,4 +1,5 @@
 const React = require("react");
+const Tailwind = require("tailwindcss");
 
 class Index extends React.Component {
   render() {
@@ -6,7 +7,7 @@ class Index extends React.Component {
 
     return (
       <div>
-        <h1>pollUp Master Index</h1>
+        <h1 className="text-red-500">pollUp Master Index</h1>
         <nav>
           <a href="/new">Create New Voter</a>
         </nav>
