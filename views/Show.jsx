@@ -12,10 +12,13 @@ class Show extends React.Component {
         House District: {voter.house_district}
         Senate District: {voter.senate_district}
         Contacted: {voter.contacted}
-        <nav>
+        <button>
           <a href="/voters">Home</a>
-          <a href="/voters/{voter._id}/edit" />
-        </nav>
+        </button>
+        <br />
+        <button>
+          <a href={`/voters/${voter._id}/edit`}>Edit Voter</a>
+        </button>
       </div>
     );
   }

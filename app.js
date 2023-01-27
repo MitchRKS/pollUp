@@ -113,7 +113,7 @@ app.get("/voters/:id/edit", (req, res) => {
 });
 
 //Update Route
-app.put("/", (req, res) => {
+app.patch("/voters/:id", (req, res) => {
   Voter.findByIdAndUpdate(req.params.id, req.body, (err, foundVoter) => {
     if (!err) {
       res.redirect(`/voters/${req.params.id}`);

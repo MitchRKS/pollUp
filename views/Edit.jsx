@@ -8,7 +8,7 @@ class Edit extends React.Component {
     return (
       <>
         <h1>{name} Edit Page</h1>
-        <form action={`/${_id}?_method=PUT`} method="POST">
+        <form action={`/voters/${_id}?_method=PATCH`} method="POST">
           Name: <input type="text" name="name" defaultValue={name} />
           <br />
           Affiliation:{" "}
