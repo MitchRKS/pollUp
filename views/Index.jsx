@@ -1,13 +1,13 @@
-const React = require("react");
-const Tailwind = require("tailwindcss");
-
+// const React = require("react");
+import React from "react";
+import { Button } from "@mui/material";
 class Index extends React.Component {
   render() {
     const { voters } = this.props;
 
     return (
       <div>
-        <h1 className="text-red-500">pollUp Master Index</h1>
+        <h1>pollUp Master Index</h1>
         <nav>
           <a href="/new">Create New Voter</a>
         </nav>
@@ -18,7 +18,9 @@ class Index extends React.Component {
                 <a href={`/voters/${voter.id}`}> {voter.name} </a> is a
                 registered {voter.affiliation}.
                 <form action={`/voters/${voter._id}/edit`} method="GET">
-                  <input type="submit" value="Edit" />
+                  <Button type="submit" value="Edit">
+                    Edit
+                  </Button>
                 </form>
                 <form
                   action={`/voters/${voter._id}?_method=DELETE`}
@@ -26,6 +28,7 @@ class Index extends React.Component {
                 >
                   <input type="submit" value="DELETE" />
                 </form>
+                <p>I am putting this text here to see if tailwind is working</p>
               </li>
             );
           })}

@@ -1,16 +1,24 @@
-require("dotenv").config();
-
+//require("dotenv").config();
+import dotenv from "dotenv";
 /**
  * Requirements
  */
-const mongoose = require("mongoose");
-const express = require("express");
-const app = express();
-const Voter = require("./models/voters.js");
-const seedData = require("./seed.js");
-//include the method-override package place this where you instructor places it
-const methodOverride = require("method-override");
 
+//const mongoose = require("mongoose");
+import mongoose from "mongoose";
+//const express = require("express");
+import express from "express";
+import * as jsx from "jsx-view-engine";
+//const Voter = require("./models/voters.js");
+import { Voter } from "./models/voters.js";
+//const seedData = require("./seed.js");
+import seedData from "./seed.js";
+//include the method-override package place this where you instructor places it
+//const methodOverride = require("method-override");
+import methodOverride from "method-override";
+dotenv.config();
+
+const app = express();
 /**
  * Configuration
  */
@@ -51,7 +59,7 @@ app.use(express.json());
  * View engine
  */
 app.set("view engine", "jsx");
-app.engine("jsx", require("jsx-view-engine").createEngine());
+app.engine("jsx", jsx.createEngine());
 
 /**
  * Controller middlewares go here ⬇️

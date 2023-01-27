@@ -19,4 +19,5 @@ const seedData = [
   },
 ];
 
-module.exports = seedData;
+//module.exports = seedData;
+export default seedData;

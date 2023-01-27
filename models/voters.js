@@ -1,4 +1,5 @@
-const mongoose = require("mongoose");
+//const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const voterSchema = new mongoose.Schema({
   name: String,
@@ -7,6 +8,6 @@ const voterSchema = new mongoose.Schema({
   senate_district: Number,
 });
 
-const Voter = mongoose.model("Voter", voterSchema);
+export const Voter = mongoose.model("Voter", voterSchema);
 
-module.exports = Voter;
+//module.exports = Voter;
