@@ -12,7 +12,7 @@ import * as jsx from "jsx-view-engine";
 import Resource from "express-resource";
 //const Voter = require("./models/voters.js");
 import { Voter } from "./models/voters.js";
-//const seedData = require("./seed.js");
+import User from "./models/user.js";
 import seedData from "./seed.js";
 //include the method-override package place this where you instructor places it
 //const methodOverride = require("method-override");
@@ -65,7 +65,7 @@ app.engine("jsx", jsx.createEngine());
 /**
  * Controller middlewares go here ⬇️
  */
-
+app.use("/user", userController);
 // Landing Page
 app.get("/", (req, res) => {
   res.redirect("/voters");
