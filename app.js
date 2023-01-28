@@ -4,18 +4,14 @@ import dotenv from "dotenv";
  * Requirements
  */
 
-//const mongoose = require("mongoose");
 import mongoose from "mongoose";
-//const express = require("express");
+
 import express from "express";
 import * as jsx from "jsx-view-engine";
 import Resource from "express-resource";
-//const Voter = require("./models/voters.js");
 import { Voter } from "./models/voters.js";
-import User from "./models/user.js";
+import User from "./models/users.js";
 import seedData from "./seed.js";
-//include the method-override package place this where you instructor places it
-//const methodOverride = require("method-override");
 import methodOverride from "method-override";
 dotenv.config();
 
@@ -65,7 +61,8 @@ app.engine("jsx", jsx.createEngine());
 /**
  * Controller middlewares go here ⬇️
  */
-app.use("/user", userController);
+//app.use("/user", userController);
+
 // Landing Page
 app.get("/", (req, res) => {
   res.redirect("/voters");
