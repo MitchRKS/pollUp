@@ -1,4 +1,6 @@
-const React = require("react");
+//const React = require("react");
+import React from "react";
+import AppBarComponent from "./Components/AppBar";
 
 class Show extends React.Component {
   render() {
@@ -6,6 +8,7 @@ class Show extends React.Component {
 
     return (
       <div>
+        <AppBarComponent />
         <h1>Profile View</h1>
         Name: {voter.name}
         Affiliation: {voter.affiliation}
@@ -28,4 +31,4 @@ class Show extends React.Component {
   }
 }
 
-module.exports = Show;
+export default Show;

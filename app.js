@@ -9,6 +9,7 @@ import mongoose from "mongoose";
 //const express = require("express");
 import express from "express";
 import * as jsx from "jsx-view-engine";
+import Resource from "express-resource";
 //const Voter = require("./models/voters.js");
 import { Voter } from "./models/voters.js";
 //const seedData = require("./seed.js");

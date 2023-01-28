@@ -1,4 +1,6 @@
-const React = require("react");
+//const React = require("react");
+import React from "react";
+import AppBarComponent from "./Components/AppBar";
 
 class Edit extends React.Component {
   render() {
@@ -7,6 +9,7 @@ class Edit extends React.Component {
 
     return (
       <>
+        <AppBarComponent />
         <h1>{name} Edit Page</h1>
         <form action={`/voters/${_id}?_method=PATCH`} method="POST">
           Name: <input type="text" name="name" defaultValue={name} />
@@ -35,4 +38,4 @@ class Edit extends React.Component {
   }
 }
 
-module.exports = Edit;
+export default Edit;

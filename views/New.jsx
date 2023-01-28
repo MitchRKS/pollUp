@@ -1,9 +1,12 @@
-const React = require("react");
+//const React = require("react");
+import React from "react";
+import AppBarComponent from "./Components/AppBar";
 
 class New extends React.Component {
   render() {
     return (
       <div>
+        <AppBarComponent />
         <h1>Create Prospective Supporter</h1>
         <form action="/" method="POST">
           Name: <input type="text" name="name" />
@@ -24,4 +27,4 @@ class New extends React.Component {
   }
 }
 
-module.exports = New;
+export default New;
