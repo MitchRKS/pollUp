@@ -14,7 +14,7 @@ import User from "./models/users.js";
 import seedData from "./seed.js";
 import methodOverride from "method-override";
 import voterRouter from "./controllers/voter/voterController.js";
-import userRouter from "./controllers/user/userController.js";
+//import userRouter from "./controllers/user/userController.js";
 
 dotenv.config();
 
@@ -65,7 +65,7 @@ app.engine("jsx", jsx.createEngine());
  * Controller middlewares go here ⬇️
  */
 app.use("/voters", voterRouter);
-app.use("/users", userRouter);
+//app.use("/users", userRouter);
 // Landing Page
 app.get("/", (req, res) => {
   try {

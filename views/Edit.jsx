@@ -1,7 +1,7 @@
 //const React = require("react");
 import React from "react";
 import AppBarComponent from "./Components/AppBar";
-
+import { TextField } from "@mui/material";
 class Edit extends React.Component {
   render() {
     const { name, _id, affiliation, house_district, senate_district } =
@@ -12,25 +12,30 @@ class Edit extends React.Component {
         <AppBarComponent />
         <h1>{name} Edit Page</h1>
         <form action={`/voters/${_id}?_method=PATCH`} method="POST">
-          Name: <input type="text" name="name" defaultValue={name} />
-          <br />
-          Affiliation:{" "}
-          <input type="text" name="affiliation" defaultValue={affiliation} />
-          <br />
-          House District:{" "}
-          <input
-            type="number"
-            name="house_district"
-            defaultValue={house_district}
+          <TextField
+            id="outlined-helperText"
+            label="Name"
+            defaultValue={`${name}`}
+            helperText="Edit Contact Name"
           />
-          <br />
-          Senate District:{" "}
-          <input
-            type="number"
-            name="senate_district"
-            defaultValue={senate_district}
+          <TextField
+            id="outlined-helperText"
+            label="Affiliation"
+            defaultValue={`${affiliation}`}
+            helperText="Edit Contact Affiliation"
           />
-          <br />
+          <TextField
+            id="outlined-helperText"
+            label="State House District"
+            defaultValue={`${house_district}`}
+            helperText="Edit Contact House District"
+          />
+          <TextField
+            id="outlined-helperText"
+            label="State Senate District"
+            defaultValue={`${senate_district}`}
+            helperText="Edit Contact Senate District"
+          />
           <input type="submit" value="Submit Edits" />
         </form>
       </>
