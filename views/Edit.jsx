@@ -1,7 +1,7 @@
 //const React = require("react");
 import React from "react";
 import AppBarComponent from "./Components/AppBar";
-import { TextField } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 class Edit extends React.Component {
   render() {
     const { name, _id, affiliation, house_district, senate_district } =
@@ -36,7 +36,7 @@ class Edit extends React.Component {
             defaultValue={`${senate_district}`}
             helperText="Edit Contact Senate District"
           />
-          <input type="submit" value="Submit Edits" />
+          <Button variant="contained">Submit Edits</Button>
         </form>
       </>
     );
