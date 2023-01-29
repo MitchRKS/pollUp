@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, AppBar, Tooltip, Avatar } from "@mui/material";
+import { Button, AppBar, Link, Avatar } from "@mui/material";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
@@ -105,7 +105,16 @@ export default class AppBarComponent extends React.Component {
               LOGO
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-              {pages.map((page) => (
+              <Link href="/voters" color="inherit">
+                Home
+              </Link>
+              {/* <Link href="#" color="inherit">
+                {'color="inherit"'}
+              </Link>
+              <Link href="#" variant="body2">
+                {'variant="body2"'}
+              </Link> */}
+              {/* {pages.map((page) => (
                 <Button
                   key={page}
                   onClick={this.handleCloseNavMenu}
@@ -113,7 +122,7 @@ export default class AppBarComponent extends React.Component {
                 >
                   {page}
                 </Button>
-              ))}
+              ))} */}
             </Box>
           </Toolbar>
         </Container>

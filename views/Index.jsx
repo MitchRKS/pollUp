@@ -11,7 +11,7 @@ class Index extends React.Component {
         <AppBarComponent />
         <h1>pollUp Master Index</h1>
         <nav>
-          <a href="/new">Create New Voter</a>
+          <a href="/voters/new">Create New Voter</a>
         </nav>
         <ul>
           {this.props.voters.map((voter, i) => {
@@ -28,7 +28,9 @@ class Index extends React.Component {
                   action={`/voters/${voter._id}?_method=DELETE`}
                   method="POST"
                 >
-                  <input type="submit" value="DELETE" />
+                  <Button variant="outlined" type="submit" value="Edit">
+                    Delete
+                  </Button>
                 </form>
               </li>
             );

@@ -8,7 +8,7 @@ class New extends React.Component {
       <div>
         <AppBarComponent />
         <h1>Create Prospective Supporter</h1>
-        <form action="/" method="POST">
+        <form action="/voters" method="POST">
           Name: <input type="text" name="name" />
           <br />
           Affiliation: <input type="text" name="affiliation" />
