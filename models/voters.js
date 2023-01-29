@@ -1,4 +1,3 @@
-//const mongoose = require("mongoose");
 import mongoose from "mongoose";
 
 const voterSchema = new mongoose.Schema({
@@ -9,5 +8,3 @@ const voterSchema = new mongoose.Schema({
 });
 
 export const Voter = mongoose.model("Voter", voterSchema);
-
-//module.exports = Voter;

@@ -30,7 +30,6 @@ class Index extends React.Component {
                 >
                   <input type="submit" value="DELETE" />
                 </form>
-                <p>I am putting this text here to see if tailwind is working</p>
               </li>
             );
           })}

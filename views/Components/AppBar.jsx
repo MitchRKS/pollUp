@@ -62,7 +62,7 @@ export default class AppBarComponent extends React.Component {
               </IconButton>
               <Menu
                 id="menu-appbar"
-                // anchorEl={this.anchorElNav}
+                anchorEl={this.anchorElNav}
                 // anchorOrigin={{
                 //   vertical: "bottom",
                 //   horizontal: "left",
@@ -72,7 +72,7 @@ export default class AppBarComponent extends React.Component {
                   vertical: "top",
                   horizontal: "left",
                 }}
-                // open={Boolean(this.anchorElNav)}
+                open={true}
                 onClose={this.handleCloseNavMenu}
                 sx={{
                   display: { xs: "block", md: "none" },

@@ -13,6 +13,8 @@ import { Voter } from "./models/voters.js";
 import User from "./models/users.js";
 import seedData from "./seed.js";
 import methodOverride from "method-override";
+import voterRouter from "./controllers/voter/voterController.js";
+
 dotenv.config();
 
 const app = express();
@@ -61,84 +63,81 @@ app.engine("jsx", jsx.createEngine());
 /**
  * Controller middlewares go here ⬇️
  */
-//app.use("/user", userController);
+app.use("/voters", voterRouter);
 
 // Landing Page
 app.get("/", (req, res) => {
-  res.redirect("/voters");
+  try {
+    res.redirect("/voters");
+  } catch (error) {
+    res.send(error);
+  }
 });
 
-// Index route
-app.get("/voters", (req, res) => {
-  Voter.find({}, (err, allVoters) => {
-    res.render("Index", {
-      voters: allVoters,
-    });
-  });
-});
+// app.get("/voters", (req, res) => {
+//   Voter.find({}, (error, allVoters) => {
+//     res.render("Index", {
+//       voters: allVoters,
+//     });
+//   });
+// });
 
-// Create Route
+// app.post("/", (req, res) => {
+//   Voter.create(req.body, (err, createdVoter) => {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       res.redirect("/voters");
+//     }
+//   });
+// });
 
-app.post("/", (req, res) => {
-  Voter.create(req.body, (err, createdVoter) => {
-    if (err) {
-      console.log(err);
-    } else {
-      res.redirect("/voters");
-    }
-  });
-});
+// app.get("/new", (req, res) => {
+//   res.render("New");
+// });
 
-// New Route
-app.get("/new", (req, res) => {
-  res.render("New");
-});
+// app.get("/voters/:id", (req, res) => {
+//   const { id } = req.params;
 
-// Show Route
-app.get("/voters/:id", (req, res) => {
-  const { id } = req.params;
+//   Voter.findById(id, (error, foundVoter) => {
+//     res.render("Show", {
+//       voter: foundVoter,
+//     });
+//   });
+// });
 
-  Voter.findById(id, (error, foundVoter) => {
-    res.render("Show", {
-      voter: foundVoter,
-    });
-  });
-});
+// app.get("/voters/:id/edit", (req, res) => {
+//   Voter.findById(req.params.id, (err, foundVoter) => {
+//     if (!err) {
+//       res.render("Edit", {
+//         voter: foundVoter,
+//       });
+//     } else {
+//       res.send({ msg: err.message });
+//     }
+//   });
+// });
 
-// Edit Route
-app.get("/voters/:id/edit", (req, res) => {
-  Voter.findById(req.params.id, (err, foundVoter) => {
-    if (!err) {
-      res.render("Edit", {
-        voter: foundVoter,
-      });
-    } else {
-      res.send({ msg: err.message });
-    }
-  });
-});
+// app.delete("/voters/:id", (req, res) => {
+//   Voter.findByIdAndRemove(req.params.id, (err, data) => {
+//     if (!err) {
+//       res.redirect("/voters");
+//     } else {
+//       res.send({ error: err });
+//     }
+//   });
+// });
 
-// Delete Route
-app.delete("/voters/:id", (req, res) => {
-  Voter.findByIdAndRemove(req.params.id, (err, data) => {
-    if (!err) {
-      res.redirect("/voters");
-    } else {
-      res.send({ error: err });
-    }
-  });
-});
+// app.patch("/voters/:id", (req, res) => {
+//   Voter.findByIdAndUpdate(req.params.id, req.body, (err, foundVoter) => {
+//     if (!err) {
+//       res.redirect(`/voters/${req.params.id}`);
+//     } else {
+//       res.send({ error: err });
+//     }
+//   });
+// });
 
-//Update Route
-app.patch("/voters/:id", (req, res) => {
-  Voter.findByIdAndUpdate(req.params.id, req.body, (err, foundVoter) => {
-    if (!err) {
-      res.redirect(`/voters/${req.params.id}`);
-    } else {
-      res.send({ error: err });
-    }
-  });
-});
 // Listen on the port
 app.listen(PORT, () => {
   console.log(`listening on port:${PORT} http://localhost:${PORT}/`);
