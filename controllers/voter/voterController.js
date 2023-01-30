@@ -57,7 +57,7 @@ voterRouter.delete("/:id", (req, res) => {
   });
 });
 
-voterRouter.patch("/voters/:id", (req, res) => {
+voterRouter.patch("/:id", (req, res) => {
   Voter.findByIdAndUpdate(req.params.id, req.body, (err, foundVoter) => {
     if (!err) {
       res.redirect(`/voters/${req.params.id}`);
