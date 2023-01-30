@@ -108,6 +108,10 @@ export default class AppBarComponent extends React.Component {
               <Link href="/voters" color="inherit">
                 Home
               </Link>
+
+              <Link href="/voters" color="inherit" paddingLeft={3}>
+                Scripts
+              </Link>
               {/* <Link href="#" color="inherit">
                 {'color="inherit"'}
               </Link>

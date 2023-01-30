@@ -11,7 +11,7 @@ class Edit extends React.Component {
       <>
         <AppBarComponent />
         <h1>{name} Edit Page</h1>
-        <form action={`/voters/${_id}?_method=PATCH`} method="POST">
+        <form action={`/${_id}?_method=PATCH`} method="POST">
           <TextField
             id="outlined-helperText"
             label="Name"
@@ -36,7 +36,9 @@ class Edit extends React.Component {
             defaultValue={`${senate_district}`}
             helperText="Edit Contact Senate District"
           />
-          <Button variant="contained">Submit Edits</Button>
+          <Button type="submit" variant="contained">
+            Submit Edits
+          </Button>
         </form>
       </>
     );
