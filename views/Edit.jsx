@@ -1,7 +1,8 @@
-//const React = require("react");
 import React from "react";
 import AppBarComponent from "./Components/AppBar";
 import { Button, TextField } from "@mui/material";
+import Voter from "../models/voters";
+import { VoterForm } from "./Components/VoterForm";
 class Edit extends React.Component {
   render() {
     const { name, _id, affiliation, house_district, senate_district } =
@@ -12,7 +13,8 @@ class Edit extends React.Component {
         <AppBarComponent />
         <h1>{name}</h1>
         <form action={`/voters/${_id}?_method=PATCH`} method="POST">
-          <TextField
+          <VoterForm />
+          {/* <TextField
             id="outlined-helperText"
             label="name"
             name="name"
@@ -39,10 +41,10 @@ class Edit extends React.Component {
             name="senate_district"
             defaultValue={`${senate_district}`}
             helperText="Edit Contact Senate District"
-          />
-          <Button type="submit" variant="contained">
+          /> */}
+          {/* <Button type="submit" variant="contained">
             Submit Edits
-          </Button>
+          </Button> */}
         </form>
       </>
     );
