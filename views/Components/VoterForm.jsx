@@ -8,29 +8,29 @@ export class VoterForm extends React.Component {
       <>
         <TextField
           id="outlined-helperText"
-          label="name"
           name="name"
+          defaultValue={""}
           helperText="Edit Contact Name"
         />
         <TextField
           id="outlined-helperText"
-          label="Affiliation"
           name="affiliation"
+          defaultValue={""}
           helperText="Edit Contact Affiliation"
         />
         <TextField
           id="outlined-helperText"
-          label="State House District"
           name="house_district"
+          defaultValue={""}
           helperText="Edit Contact House District"
         />
         <TextField
           id="outlined-helperText"
-          label="State Senate District"
           name="senate_district"
+          defaultValue={""}
           helperText="Edit Contact Senate District"
         />
-        <Button type="submit" variant="contained">
+        <Button type="submit" name="" variant="contained">
           Submit
         </Button>
       </>

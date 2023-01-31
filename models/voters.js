@@ -13,7 +13,6 @@ const voterSchema = new mongoose.Schema({
     state: String,
     fiveZip: Number,
   },
-  reachable: { type: Boolean, required: true },
 });
 
 export const Voter = mongoose.model("Voter", voterSchema);
