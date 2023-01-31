@@ -1,15 +1,15 @@
-//const React = require("react");
 import React from "react";
 import AppBarComponent from "./Components/AppBar";
 import { VoterForm } from "./Components/VoterForm";
+import BaseLayout from "./Layout/Base";
 
 class New extends React.Component {
   render() {
     return (
-      <div>
+      <BaseLayout>
         <AppBarComponent />
-        <h1>Create Prospective Supporter</h1>
-        <form action="/voters" method="POST">
+        <h1 className="center">Create Prospective Supporter</h1>
+        <form action="/voters" method="POST" className="center">
           <VoterForm />
 
           {/* Name: <input type="text" name="name" />
@@ -25,7 +25,7 @@ class New extends React.Component {
           <br />
           <input type="submit" name="" value="Create Voter" /> */}
         </form>
-      </div>
+      </BaseLayout>
     );
   }
 }

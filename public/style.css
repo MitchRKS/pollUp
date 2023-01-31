@@ -1,0 +1,21 @@
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navLinks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.paddingRL {
+  padding-left: 10px;
+  padding-right: 10px;
+}

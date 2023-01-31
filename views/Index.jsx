@@ -1,4 +1,3 @@
-// const React = require("react");
 import React from "react";
 import { Button, AppBar } from "@mui/material";
 import AppBarComponent from "./Components/AppBar";
