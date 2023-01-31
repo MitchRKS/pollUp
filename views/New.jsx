@@ -1,6 +1,7 @@
 //const React = require("react");
 import React from "react";
 import AppBarComponent from "./Components/AppBar";
+import { VoterForm } from "./Components/VoterForm";
 
 class New extends React.Component {
   render() {
@@ -9,7 +10,9 @@ class New extends React.Component {
         <AppBarComponent />
         <h1>Create Prospective Supporter</h1>
         <form action="/voters" method="POST">
-          Name: <input type="text" name="name" />
+          <VoterForm />
+
+          {/* Name: <input type="text" name="name" />
           <br />
           Affiliation: <input type="text" name="affiliation" />
           <br />
@@ -20,7 +23,7 @@ class New extends React.Component {
           Have they already been contacted?{" "}
           <input type="checkbox" name="contacted" />
           <br />
-          <input type="submit" name="" value="Create Voter" />
+          <input type="submit" name="" value="Create Voter" /> */}
         </form>
       </div>
     );
