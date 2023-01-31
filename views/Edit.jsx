@@ -10,7 +10,7 @@ class Edit extends React.Component {
     return (
       <>
         <AppBarComponent />
-        <h1>{name} Edit Page</h1>
+        <h1>{name}</h1>
         <form action={`/voters/${_id}?_method=PATCH`} method="POST">
           <TextField
             id="outlined-helperText"
