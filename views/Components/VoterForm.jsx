@@ -15,35 +15,36 @@ export class VoterForm extends React.Component {
     }
 
     return (
-      <>
+      <div className="center">
         <TextField
           id="outlined-helperText"
           name="name"
           defaultValue={name ? name : ""}
-          helperText="Edit Contact Name"
+          helperText="Contact Name"
+          className="paddingTB"
         />
         <TextField
           id="outlined-helperText"
           name="affiliation"
           defaultValue={affiliation ? affiliation : ""}
-          helperText="Edit Contact Affiliation"
+          helperText="Contact Affiliation"
         />
         <TextField
           id="outlined-helperText"
           name="house_district"
           defaultValue={house_district ? house_district : ""}
-          helperText="Edit Contact House District"
+          helperText="Contact House District"
         />
         <TextField
           id="outlined-helperText"
           name="senate_district"
           defaultValue={senate_district ? senate_district : ""}
-          helperText="Edit Contact Senate District"
+          helperText="Contact Senate District"
         />
         <Button type="submit" name="" variant="contained">
           Submit
         </Button>
-      </>
+      </div>
     );
   }
 }

@@ -9,7 +9,7 @@ class New extends React.Component {
       <BaseLayout>
         <AppBarComponent />
         <h1 className="center">Create Prospective Supporter</h1>
-        <form action="/voters" method="POST" className="center">
+        <form action="/voters" method="POST">
           <VoterForm />
 
           {/* Name: <input type="text" name="name" />

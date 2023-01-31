@@ -10,11 +10,7 @@ class Edit extends React.Component {
     return (
       <BaseLayout>
         <AppBarComponent />
-        <form
-          action={`/voters/${_id}?_method=PATCH`}
-          method="POST"
-          className="center"
-        >
+        <form action={`/voters/${_id}?_method=PATCH`} method="POST">
           <VoterForm form={this.props.voter} />
         </form>
       </BaseLayout>
