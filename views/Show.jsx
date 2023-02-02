@@ -11,11 +11,13 @@ class Show extends React.Component {
         <AppBarComponent />
         <div className="center">
           <h1>Profile View</h1>
-          Name: {voter.name}
-          Affiliation: {voter.affiliation}
-          House District: {voter.house_district}
-          Senate District: {voter.senate_district}
-          Contacted: {voter.contacted}
+          <table>
+            Name: {voter.name}
+            Affiliation: {voter.affiliation}
+            House District: {voter.house_district}
+            Senate District: {voter.senate_district}
+            Contacted: {voter.contacted}
+          </table>
           <button>
             <a href="/voters">Home</a>
           </button>

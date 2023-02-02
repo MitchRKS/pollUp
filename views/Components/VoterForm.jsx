@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, TextField } from "@mui/material";
+import { CheckBox } from "@mui/icons-material";
 
 export class VoterForm extends React.Component {
   render() {

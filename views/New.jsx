@@ -8,7 +8,7 @@ class New extends React.Component {
     return (
       <BaseLayout>
         <AppBarComponent />
-        <h1 className="center">Create Prospective Supporter</h1>
+        <h1>Create Prospective Supporter</h1>
         <form action="/voters" method="POST">
           <VoterForm />
         </form>
