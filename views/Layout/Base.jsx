@@ -12,7 +12,7 @@ class BaseLayout extends React.Component {
           <link rel="stylesheet" href={"/style.css"} />
         </head>
 
-        <body>{this.props.children}</body>
+        <body className="center voterBox">{this.props.children}</body>
       </html>
     );
   }
