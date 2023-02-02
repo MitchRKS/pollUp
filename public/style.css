@@ -23,6 +23,9 @@
 .paddingTB {
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.marginTB {
   margin-top: 10px;
   margin-bottom: 10px;
 }

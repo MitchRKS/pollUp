@@ -4,7 +4,16 @@ import { Button, TextField } from "@mui/material";
 export class VoterForm extends React.Component {
   render() {
     console.log(this.props, "voter form console log");
-    let name, id, affiliation, house_district, senate_district;
+    let name,
+      id,
+      affiliation,
+      house_district,
+      senate_district,
+      unit_num,
+      street,
+      city,
+      state,
+      fiveZip;
     if (this.props.form) {
       let props = this.props.form;
       name = props.name;
@@ -12,6 +21,11 @@ export class VoterForm extends React.Component {
       affiliation = props.affiliation;
       house_district = props.house_district;
       senate_district = props.senate_district;
+      unit_num = props.unit_num;
+      street = props.street;
+      city = props.city;
+      state = props.state;
+      fiveZip = props.fiveZip;
     }
 
     return (
@@ -40,6 +54,36 @@ export class VoterForm extends React.Component {
           name="senate_district"
           defaultValue={senate_district ? senate_district : ""}
           helperText="Contact Senate District"
+        />
+        <TextField
+          id="outlined-helperText"
+          name="unit_num"
+          defaultValue={unit_num ? unit_num : ""}
+          helperText="Contact Unit Number"
+        />
+        <TextField
+          id="outlined-helperText"
+          name="street"
+          defaultValue={street ? street : ""}
+          helperText="Contact Street Name"
+        />
+        <TextField
+          id="outlined-helperText"
+          name="city"
+          defaultValue={city ? city : ""}
+          helperText="Contact City"
+        />
+        <TextField
+          id="outlined-helperText"
+          name="state"
+          defaultValue={state ? state : ""}
+          helperText="Contact State"
+        />
+        <TextField
+          id="outlined-helperText"
+          name="fiveZip"
+          defaultValue={fiveZip ? fiveZip : ""}
+          helperText="Contact Zip Code"
         />
         <Button type="submit" name="" variant="contained">
           Submit

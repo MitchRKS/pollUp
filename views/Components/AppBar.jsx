@@ -8,8 +8,8 @@ import WhereToVoteIcon from "@mui/icons-material/WhereToVote";
 export default class AppBarComponent extends React.Component {
   render() {
     return (
-      <AppBar position="static" className="fullWidth">
-        <Toolbar disableGutters fullWidth className="navLinks paddingRL">
+      <AppBar position="static" className="fullWidth marginTB">
+        <Toolbar disableGutters fullwidth className="navLinks paddingRL">
           <Box display="flex">
             <WhereToVoteIcon
               sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
