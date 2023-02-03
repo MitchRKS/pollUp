@@ -9,7 +9,6 @@ class Edit extends React.Component {
     const { _id } = this.props.voter;
     return (
       <BaseLayout>
-        <AppBarComponent />
         <form action={`/voters/${_id}?_method=PATCH`} method="POST">
           <VoterForm form={this.props.voter} />
         </form>

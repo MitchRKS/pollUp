@@ -1,5 +1,5 @@
 import React from "react";
-
+import AppBarComponent from "../Components/AppBar";
 // Higher order component
 
 class BaseLayout extends React.Component {
@@ -12,7 +12,10 @@ class BaseLayout extends React.Component {
           <link rel="stylesheet" href={"/style.css"} />
         </head>
 
-        <body className="center voterBox">{this.props.children}</body>
+        <body className="center">
+          <AppBarComponent />
+          {this.props.children}
+        </body>
       </html>
     );
   }

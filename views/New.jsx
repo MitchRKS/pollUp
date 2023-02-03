@@ -7,7 +7,6 @@ class New extends React.Component {
   render() {
     return (
       <BaseLayout>
-        <AppBarComponent />
         <h1>Create Prospective Supporter</h1>
         <form action="/voters" method="POST">
           <VoterForm />

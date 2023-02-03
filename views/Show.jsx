@@ -8,7 +8,6 @@ class Show extends React.Component {
 
     return (
       <BaseLayout>
-        <AppBarComponent />
         <div className="center">
           <h1>Profile View</h1>
           <table>
