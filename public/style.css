@@ -40,11 +40,6 @@ body {
   margin-bottom: 10px;
 }
 
-.voterBox {
-  border: solid black 2px;
-  height: 100%;
-}
-
 .evenSpace {
   flex: row;
   flex-wrap: nowrap;
