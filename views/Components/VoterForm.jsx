@@ -10,8 +10,7 @@ export class VoterForm extends React.Component {
       affiliation,
       house_district,
       senate_district,
-      unit_num,
-      street,
+      street_address,
       city,
       state,
       fiveZip;
@@ -22,8 +21,7 @@ export class VoterForm extends React.Component {
       affiliation = props.affiliation;
       house_district = props.house_district;
       senate_district = props.senate_district;
-      unit_num = props.unit_num;
-      street = props.street;
+      street_address = props.street;
       city = props.city;
       state = props.state;
       fiveZip = props.fiveZip;
@@ -46,27 +44,22 @@ export class VoterForm extends React.Component {
         />
         <TextField
           id="outlined-helperText"
-          name="house_district"
-          defaultValue={house_district ? house_district : ""}
-          helperText="Contact House District"
-        />
-        <TextField
-          id="outlined-helperText"
           name="senate_district"
           defaultValue={senate_district ? senate_district : ""}
           helperText="Contact Senate District"
         />
         <TextField
           id="outlined-helperText"
-          name="unit_num"
-          defaultValue={unit_num ? unit_num : ""}
-          helperText="Contact Unit Number"
+          name="house_district"
+          defaultValue={house_district ? house_district : ""}
+          helperText="Contact House District"
         />
+
         <TextField
           id="outlined-helperText"
-          name="street"
-          defaultValue={street ? street : ""}
-          helperText="Contact Street Name"
+          name="street_address"
+          defaultValue={street_address ? street_address : ""}
+          helperText="Contact Street Address"
         />
         <TextField
           id="outlined-helperText"

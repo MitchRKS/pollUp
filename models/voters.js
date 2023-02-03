@@ -5,13 +5,10 @@ const voterSchema = new mongoose.Schema({
   affiliation: String,
   house_district: Number,
   senate_district: Number,
-  address: {
-    unit_num: Number,
-    street: String,
-    city: String,
-    state: String,
-    fiveZip: Number,
-  },
+  street_address: String,
+  city: String,
+  state: String,
+  fiveZip: Number,
 });
 
 export const Voter = mongoose.model("Voter", voterSchema);
