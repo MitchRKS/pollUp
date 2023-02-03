@@ -2,6 +2,14 @@ import React from "react";
 import { Button, AppBar } from "@mui/material";
 import AppBarComponent from "./Components/AppBar";
 import BaseLayout from "./Layout/Base";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+import { RowingSharp } from "@mui/icons-material";
 
 class Index extends React.Component {
   render() {
@@ -13,33 +21,78 @@ class Index extends React.Component {
         <nav>
           <a href="/voters/new">Create New Voter</a>
         </nav>
-        <ul>
-          {this.props.voters.map((voter, i) => {
-            return (
-              <li key={i}>
-                <div>
-                  <table>
-                    <a href={`/voters/${voter.id}`}> {voter.name} </a> is a
-                    registered {voter.affiliation}.
-                    <form action={`/voters/${voter._id}/edit`} method="GET">
-                      <Button variant="outlined" type="submit" value="Edit">
-                        Edit
-                      </Button>
-                    </form>
-                    <form
-                      action={`/voters/${voter._id}?_method=DELETE`}
-                      method="POST"
+
+        <TableContainer>
+          <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <TableHead>
+              <TableRow>
+                <TableCell>Name</TableCell>
+                <TableCell>Party</TableCell>
+                <TableCell>KS Senate District</TableCell>
+                <TableCell>Edit Voter</TableCell>
+                <TableCell>Delete Voter</TableCell>
+              </TableRow>
+            </TableHead>
+          </Table>
+        </TableContainer>
+        {this.props.voters.map((voter, i) => {
+          return (
+            <div>
+              <TableContainer>
+                <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                  <TableBody>
+                    <TableRow
+                      key={voter.name}
+                      sx={{
+                        "&:last-child td, &:last-child th": { border: 0 },
+                      }}
                     >
-                      <Button variant="outlined" type="submit" value="Edit">
-                        Delete
-                      </Button>
-                    </form>
-                  </table>
-                </div>
-              </li>
-            );
-          })}
-        </ul>
+                      <TableCell component="th" scope="row">
+                        <a href={`/voters/${voter.id}`}> {voter.name} </a>
+                      </TableCell>
+                      <TableCell align="right">{voter.affiliation}</TableCell>
+                      <TableCell align="right">
+                        {voter.senate_district}
+                      </TableCell>
+                      <TableCell align="right">
+                        {
+                          <form
+                            action={`/voters/${voter._id}/edit`}
+                            method="GET"
+                          >
+                            <Button
+                              variant="outlined"
+                              type="submit"
+                              value="Edit"
+                            >
+                              Edit
+                            </Button>
+                          </form>
+                        }
+                      </TableCell>
+                      <TableCell align="right">
+                        {
+                          <form
+                            action={`/voters/${voter._id}?_method=DELETE`}
+                            method="POST"
+                          >
+                            <Button
+                              variant="outlined"
+                              type="submit"
+                              value="Edit"
+                            >
+                              Delete
+                            </Button>
+                          </form>
+                        }
+                      </TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </div>
+          );
+        })}
       </BaseLayout>
     );
   }
