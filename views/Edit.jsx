@@ -12,6 +12,14 @@ class Edit extends React.Component {
         <form action={`/voters/${_id}?_method=PATCH`} method="POST">
           <VoterForm form={this.props.voter} />
         </form>
+        <Button
+          href={`/voters/${_id}`}
+          variant="outlined"
+          type="submit"
+          value="Edit"
+        >
+          Back
+        </Button>
       </BaseLayout>
     );
   }
