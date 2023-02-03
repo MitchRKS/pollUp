@@ -21,7 +21,7 @@ const app = express();
 /**
  * Configuration
  */
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 /**
  * Controller requires go here ⬇️
