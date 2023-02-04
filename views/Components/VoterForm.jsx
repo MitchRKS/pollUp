@@ -46,13 +46,15 @@ export class VoterForm extends React.Component {
           id="outlined-helperText"
           name="senate_district"
           defaultValue={senate_district ? senate_district : ""}
-          helperText="Contact Senate District"
+          helperText="Contact Senate Distrit"
+          placeholder="Enter District Number"
         />
         <TextField
           id="outlined-helperText"
           name="house_district"
           defaultValue={house_district ? house_district : ""}
           helperText="Contact House District"
+          placeholder="Enter District Number"
         />
 
         <TextField
