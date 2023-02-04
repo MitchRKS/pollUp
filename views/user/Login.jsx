@@ -1,12 +1,11 @@
 import React from "react";
-import AppBarComponent from "./Components/AppBar";
-import BaseLayout from "./Layout/Base";
+import AppBarComponent from "../Components/AppBar";
+import BaseLayout from "../Layout/Base";
 
 class Signup extends React.Component {
   render() {
     return (
       <BaseLayout>
-        <AppBarComponent />
         <h1>Login</h1>
         <a href="/user/signup">
           <h3>Signup</h3>

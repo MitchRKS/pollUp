@@ -4,6 +4,14 @@ import * as jwt from "json-web-token";
 import bcrypt from "bcrypt";
 import User from "../../models/users.js";
 
+userRouter.get("/signup", (req, res) => {
+  res.render("user/Signup");
+});
+
+userRouter.get("/login", (req, res) => {
+  res.render("user/Login");
+});
+
 userRouter.post("/signup", async (req, res) => {
   const { name, password } = req.body;
 

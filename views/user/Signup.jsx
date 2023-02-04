@@ -1,12 +1,10 @@
 import React from "react";
-import AppBarComponent from "./Components/AppBar";
-import BaseLayout from "./Layout/Base";
+import BaseLayout from "../Layout/Base";
 
 class Signup extends React.Component {
   render() {
     return (
       <BaseLayout>
-        <AppBarComponent />
         <h1>Signup</h1>
 
         <form action="/user/signup" method="POST">

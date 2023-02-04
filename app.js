@@ -9,11 +9,11 @@ import express from "express";
 import * as jsx from "jsx-view-engine";
 import Resource from "express-resource";
 import { Voter } from "./models/voters.js";
-import User from "./models/users.js";
+// import User from "./models/users.js";
 import seedData from "./seed.js";
 import methodOverride from "method-override";
 import voterRouter from "./controllers/voter/voterController.js";
-import userRouter from "./controllers/user/userController.js";
+// import userRouter from "./controllers/user/userController.js";
 
 dotenv.config();
 
@@ -48,7 +48,7 @@ mongoose.connection.once("open", () => {
 import setupMiddleware from "./middleware/setupMiddleware.js";
 
 setupMiddleware(app);
-import basicAuth from "./middleware/basicAuth.js";
+// import basicAuth from "./middleware/basicAuth.js";
 // Method override will allow us to use put & delete methods
 app.use(methodOverride("_method"));
 
@@ -65,8 +65,8 @@ app.engine("jsx", jsx.createEngine());
 /**
  * Controller middlewares go here ⬇️
  */
-app.use("/voters", basicAuth, voterRouter);
-app.use("/users", userRouter);
+app.use("/voters", voterRouter);
+// app.use("/user", userRouter);
 
 // Landing Page
 app.get("/", (req, res) => {

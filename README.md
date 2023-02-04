@@ -1,8 +1,30 @@
 # pollUp
 
-## We help campaigns through numbers on that board.
+pollUp is a constituent management application built to help candidates and elected officials keep up to date with the folks they're representing.
+
+# Screenshots
+
+<img src="/screenshots/IndexSS.png">
+<img src="/screenshots/NewSS.png">
+<img src="/screenshots/ShowSS.png">
 
 ### Dig in to find out how.
+
+<Your app's title>: A description of your app. Background info of the app is a nice touch.
+
+☐ Screenshot(s): Images of your actual app.
+
+☐ Technologies Used: List of the technologies used, e.g., JavaScript, HTML, CSS...
+
+☐ Getting Started: In this section include the link to your deployed app and any instructions you deem important.
+
+☐ Next Steps: Planned future enhancements (icebox items).
+
+Note: Don't underestimate the value of a well crafted README.md. The README.mdintroduces your project to prospective employers and forms their first impression of your work!
+
+☐ Frequent commits dating back to the very beginning of the project. Commit messages should be in the present tense, e.g., "Style landing page" instead of "Styled landing page".
+
+☐ Restful route table
 
 1. Home - Landing page for web visitors. Image background with overlayed text, banner with login button, login button opens drop down to enter login credentials.
 2. After login, user will be directed to a(n index) page showing a list of all voters in the db (ordered chronologically by input date?). Each voter's name will be displayed and clickable links.
