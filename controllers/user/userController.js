@@ -19,7 +19,7 @@ userRouter.post("/signup", async (req, res) => {
   }
 });
 
-Router.post("/login", async (req, res) => {
+userRouter.post("/login", async (req, res) => {
   const { name, password } = req.body;
   try {
     const foundUser = await User.findOne({ name });
@@ -30,7 +30,7 @@ Router.post("/login", async (req, res) => {
         { name: foundUser.name, _id: foundUser._id },
         process.env.SECRET
       );
-      res.status(200).json({ error: "password doesn't match" });
+      res.status(200).json({ token });
     }
   } catch (error) {
     res.status(500).send(error);

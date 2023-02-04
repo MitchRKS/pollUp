@@ -9,7 +9,7 @@ export default class AppBarComponent extends React.Component {
   render() {
     return (
       <AppBar position="static" className="fullWidth">
-        <Toolbar disableGutters fullwidth className="navLinks paddingRL">
+        <Toolbar disableGutters className="navLinks paddingRL">
           <Box display="flex">
             <WhereToVoteIcon
               sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}

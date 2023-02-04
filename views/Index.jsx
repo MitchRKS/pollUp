@@ -17,10 +17,12 @@ class Index extends React.Component {
     const { voters } = this.props;
     return (
       <BaseLayout>
-        <h1>pollUp Master Index</h1>
-        <nav>
-          <a href="/voters/new">Create New Voter</a>
-        </nav>
+        <>
+          <h1>pollUp Master Index</h1>
+          <nav>
+            <a href="/voters/new">Create New Voter</a>
+          </nav>
+        </>
 
         <TableContainer className="center">
           <Table

@@ -42,7 +42,7 @@ class Show extends React.Component {
                   House District: {voter.house_district}
                 </TableCell>
               </TableRow>
-              <TableRow className="tdCenter">
+              <TableRow className="tdCenter" key={voter.street_address}>
                 <TableCell component="td" scope="row">
                   Address: {voter.street_address}
                 </TableCell>
